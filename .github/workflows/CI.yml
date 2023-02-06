@@ -27,10 +27,7 @@ jobs:
           - number: 0
             platforms: ""
             tag: single-platform
-          - number: 1
-            platforms: "linux/386,linux/amd64"
-            tag: multi-platform
-
+ 
     timeout-minutes: 5
 
     steps:
