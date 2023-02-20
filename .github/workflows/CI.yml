@@ -41,7 +41,7 @@ jobs:
         with:
           buildkitd-flags: --debug
           driver-opts: |
-            image=moby/buildkit:v0.10.6 
+            image=moby/buildkit:latest
             ${{ matrix.driver-opts }}
 
       - name: Log into registry ${{ env.REGISTRY }}
