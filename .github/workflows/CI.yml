@@ -41,6 +41,7 @@ jobs:
         with:
           buildkitd-flags: --debug
           provenance: false
+          sbom: false
           driver-opts: |
             image=moby/buildkit:latest
             ${{ matrix.driver-opts }}
