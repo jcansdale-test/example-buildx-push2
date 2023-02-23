@@ -56,7 +56,7 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v3
         with:
-          provenance: false
+          provenance: true
           context: .
           file: ./Dockerfile
           platforms: ${{ matrix.platforms }}
