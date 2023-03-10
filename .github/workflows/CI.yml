@@ -21,12 +21,17 @@ jobs:
 
     strategy:
       matrix:
-        number: [0]
+        number: [0,1]
         include:
           - driver-opts: ""
           - number: 0
             platforms: ""
             tag: single-platform
+            provenance: false
+          - number: 1
+            platforms: ""
+            tag: single-platform-provenance
+            provenance: true
  
     timeout-minutes: 5
 
@@ -60,5 +65,5 @@ jobs:
           context: .
           file: ./Dockerfile
           platforms: ${{ matrix.platforms }}
-          push: true
+          push: ${{ matrix.provenance }}
           tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ matrix.tag }}
